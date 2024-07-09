@@ -1,0 +1,538 @@
+:root {
+    --pink: #e84393;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+/* Section about */
+.heading {
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 4rem;
+    background: rgba(255, 51, 153, .05);
+}
+.heading span {
+    color: var(--pink); 
+}
+
+/* Button in section Home */
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background: #333;
+    color: #fff;
+    padding: 2rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+/* Animation hover button */
+.btn:hover {
+    background: var(--pink);
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+header .logo {
+    font-size: 3rem;
+    color: #333;
+    font-weight: bolder;
+}
+header .logo span {
+    
+    color: var(--pink);
+}
+
+/* Navigation menu */
+header .navbar a {
+    font-size: 2rem;
+    padding: 0 1.5rem;
+    color: #666;
+}
+header .navbar a:hover {
+    color: var(--pink);
+}
+
+/* Icons */
+header .icons a {
+    font-size: 2.5rem;
+    color: #333;
+    margin-left: 1rem;
+}
+header .icons a:hover {
+    color: var(--pink);
+}
+
+header #toggler {
+    display: none;
+}
+
+/* Toggler menu */
+header .fa-bars {
+    font-size: 3rem;
+    color: #333;
+    border-radius: 5rem;
+    padding: 5rem 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* Media queries */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    header {
+        padding: 2rem;
+    }
+}
+section {
+    padding: 2rem;
+}
+.home {
+    background-position: left;
+}
+
+@media (max-width: 768px) {
+    header .fa-bars {
+        display: block;
+    }
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #eee;
+        border-top: 1rem solid rgba(0, 0, 0, 0.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+    header #toggler:checked ~ .navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    header .navbar a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: #eee;
+        border: 1rem solid rgba(0, 0, 0, 0.1);
+        display: block;
+    }
+    .home.content h3 {
+        font-size: 5rem;
+       
+    }
+    .home.content span {
+        font-size: 2.5rem;
+    }
+    .icons-container .icons h3{
+        font-size: 2rem;
+    }
+    .icons-container .icons  span{
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+    .heading {
+        font-size: 3rem;
+    }
+}
+
+/* Home page */
+.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url('rose-flower-pictures-beautiful-roses-love-rose-flower-beautiful-flowers-wallpapers-ai-generated-free-photo.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.home .content {
+    max-width: 50rem;
+}
+.home .content h3 {
+    font-size: 6rem;
+    color: #333;
+}
+.home .content span {
+    font-size: 3.5rem;
+    color: var(--pink);
+    padding: 1rem;
+    line-height: 1.5;
+}
+.home .content p {
+    font-size: 1.5rem;
+    color: #eee;
+    padding: 0rem 0;
+    line-height: 1.5;
+}
+
+/* About section */
+.about .row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+}
+.about .row .video-container {
+    flex: 1 1 40px;
+    position: relative;
+}
+.about .row .video-container video {
+    width: 100%;
+    border: 1.5rem solid #fff;
+    border-radius: 5rem;
+    box-sizing: 0 .5rem 1rem rgba(0,0,0,.1);
+    height: 100%;
+    object-fit: cover;
+}
+.about .row .video-container h3 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #333;
+    background: #fff;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-align: center;
+    mix-blend-mode: screen;
+    font-size: 15px;
+}
+.about .row .content {
+    flex: 1 1 40rem;
+}
+.about .row .content h3 {
+    font-size: 3rem;
+    color: #333;
+}
+.about .row .content p {
+    font-size: 1.5rem;
+    color: #999;
+    padding: 5rem 0;
+    padding-top: 1rem;
+    line-height: 1.5;
+}
+
+/* Icons container */
+.icons-container {
+    background: #eee;
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: nowrap; 
+    gap: 1.5rem; 
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    justify-content: space-around; 
+}
+.icons-container .icon {
+    flex: 1 1 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+}
+/* image_icons"Free delivery , 10 days Returns" properties */
+.icons-container .icons img{
+    height: 5rem;
+    margin-right:2rem;
+}
+.icons-container .icons h3{
+    color:#333;
+    padding-bottom:0rem;
+    font-size: 1.5rem;
+
+}
+.icons-container .icons span{
+    color:#555;
+    font-size: 1.3rem;
+    
+}
+/*  Product */
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    gap: 20px; 
+}
+/* box image product */ 
+.box {
+    flex: 1 1 calc(25% - 20px); /* Adjust the width of the boxes as needed */
+    max-width: calc(25% - 20px); /* Ensure each box doesn't exceed a certain width */
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.discount{
+    color: #e84393;
+}
+ /* define the size of image product */
+.box .image img {
+    width: 100%;
+    height: auto;
+}
+.box .image a { /* Corrected selector */
+    background: #e84393;
+    color: #fff;
+    border: #e84393 solid;
+    border-radius: 5px;
+    padding: 7px;
+
+}
+ /* define content  */
+.box .content {
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+.box .content .price {
+    font-size: 1.2em;
+    color: #333;
+}
+/* Header customer review */ 
+.review .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;  
+}
+/* Box */
+.review .box-container .box{
+    flex:1.1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border-radius: .5rem ;
+    padding: 3rem 2rem;
+    position: relative;
+    border: 0.5rem solid rgba(0, 0, 0, .1);
+
+}
+
+.review .box-container .box .fas fa-quote-right{
+    position: absolute;
+    bottom:3rem;right:3rem ;
+    font-size: 6rem;
+    color: #eee;
+
+}
+
+.review .box-container .box .stars i{
+    color: var(--pink);
+    font-size: 2rem;
+}
+
+.review .box-container .box p{
+    color:#999;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    padding-top:1.2rem ;
+}
+.review .box-container .box .user{
+    display: flex;
+    align-items: center ;
+    padding-top: 2rem;
+}
+
+.review .box-container .box .user img{
+   height: 6rem;
+   width: 6rem;
+   border-radius: 50%;
+   object-fit: cover;
+   margin-right: 1rem;
+
+}
+
+.review .box-container .box .user h3{
+    font-size: 2rem;
+    color: #333;
+
+}
+
+.review .box-container .box .user span{
+    font-size: 2rem;
+    color: #333;
+    
+}
+.contact .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+/*prapare the form  */
+.contact .row form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 2rem;
+    width: 100%;
+
+  }
+  /* For box contact */
+  .contact .row form .box {
+    margin: 1rem 0;
+    width: 40rem; 
+    padding: 1rem; 
+    border: 1px solid rgb(228, 214, 214); 
+    font-size: 1.5rem;
+    border-radius:1.5rem;
+  }
+  
+  .contact .row form .box:nth-child(2) {
+    margin-top: 1.5rem;
+    height: 100px;
+  }
+  .contact .row .btn {
+    align-self: center;
+    margin-top: 2rem;
+    padding: 1rem 4rem;
+    border-radius: 1rem;
+  }
+  .contact.row.image{
+    flex: 1;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  /* Footer section */
+  /* border around all information */
+.footer {
+    background: #333;
+    padding: 5rem 9%;
+    color: #fff;
+    text-align: center;
+}
+/* Footer Box Container */
+.footer .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+/* Individual Footer Boxes */
+.footer .box-container .box {
+    flex: 1 1 25rem;
+    background: #444;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+}
+/* Footer Title */
+.footer .box-container .box h3 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+/* Footer Links */
+.footer .box-container .box a {
+    display: block;
+    color: #fff;
+    font-size: 1.5rem;
+    margin: .5rem 0;
+    transition: color .3s;
+}
+
+.footer .box-container .box a:hover {
+    color: var(--pink);
+}
+
+.footer .box-container .box img{
+    width: 100px;
+}
+/* Footer Credit Section */
+.footer .credit {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #fff;
+}
+.footer .credit span {
+    color: var(--pink);
+}
+.create_account{
+    height: 59px;
+    width: 50px;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    text-align: left;
+}
+.create_account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+.create_account .btn, .create_account .login {
+    height: 59px;
+    width: 200px;
+    display: inline-block;
+    border-radius: 5rem;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.7rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.create_account .btn {
+    color: aqua;
+    background-color: #333; /* Background color */
+    border: solid 2px #e84393; /* Border style */
+}
+
+.create_account .login {
+    background-color: #333;
+    color: aqua;
+    border: solid 2px #e84393;
+    margin-left: 590px;
+}
+.create_account .btn:hover, .create_account .login:hover {
+    background-color: var(--pink); /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+
+
+  
+
